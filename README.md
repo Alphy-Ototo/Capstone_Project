@@ -112,9 +112,8 @@ This solution provides direct business value by enabling Swire Coca-Cola to targ
 
 #### Challenges Encountered 
 
-- Large Data Volume & Complexity: Very large visit-plan files (13M+ rows) slowed processing
-- Data Leakage Risks: - GA purchase-success events unintentionally leaked outcome labels
-                      - Some operational flags and timestamps represented future information.
+- Large Data Volume & Complexity: Large data sets slowed processing
+- Data Leakage Risks: GA purchase-success events unintentionally leaked outcome labels, and some operational flags and timestamps also had data leakage
 - Merging Multiple Operational Tables
 - Different date formats across sources
 - Heavy memory usage during merges
