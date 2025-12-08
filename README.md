@@ -1,15 +1,16 @@
 ## Swire Coca-Cola Cart Abandonment Analysis
-          
-This repository showcases my individual exploratory data analysis and modeling work for the Swire Coca-Cola Cart Abandonment Case Competition (MSBA Capstone 2025).
+### MSBA Capstone 
+
 The goal of this project is to understand customer behavior on Swire Coca-Cola’s MyCoke360 ordering platform and develop a predictive model to identify which customers are most likely to abandon their carts, enabling targeted outreach to recover lost revenue from cart abandonment.
 
 #### Business Problem
 
 Swire Coca-Cola is experiencing cases of customers failing to complete their purchases and abandoning their carts, which potentially  leads to lost revenue and operational inefficiencies, and may signal deeper issues such as pricing concerns or customer dissatisfaction.
+Understanding why abandonment occurs and predicting which customers are likely to abandon their carts allows Swire to implement more effective recovery and engagement strategies.
 
 This project aims to:
 - Understand behavioral and operational factors contributing to abandonment
-- Engineer features from event logs, order data, and operational schedules
+- Engineer features from Google Analytics, operations, product, and customer data
 - Build a calibrated predictive model to estimate purchase likelihood
 - Design a profit-optimized threshold for decision-making
 
@@ -26,6 +27,9 @@ The analysis integrates several operational datasets, including:
 Data was securely accessed through Google Drive and processed in Python via Google Colab.
 
 #### Exploratory Data Analysis (EDA)
+
+Conducted in-depth EDA on customer, sales, GA, materials, visit-plan, operating hours, and cutoff-time datasets
+Created visualizations and extracted insights for segmentation, operational patterns, device behavior, and event-level interactions
 
 The EDA focused on four key areas:
 1. Customer Segmentation Insights
@@ -73,7 +77,7 @@ Removed all columns containing future or outcome-dependent information, such as:
 - EVENT_PAGE_NAME containing “success.”
 - transaction_id, payment_success
 
-Also, filter out event rows corresponding to completed purchases.
+Also, filtering out event rows corresponding to completed purchases.
 This ensures the model does not peek at information unavailable at prediction time.
 
 #### Model Performance
@@ -105,5 +109,26 @@ This approach leads to more actionable insights for Swire’s operations team.
 #### Final Recommendations & Next Steps
 - Target customers above the optimal probability threshold for outreach through email, calls, or text,  maximizing revenue recovery.  
 - Focus on user-experience improvements on the most common drop-off points identified in GA events.    
-- Consider A/B testing different outreach strategies for customers at varying risk levels.  
+- Consider A/B testing different outreach strategies for customers at varying risk levels. 
+
+#### Challenges Encountered 
+
+- Large Data Volume & Complexity: Very large visit-plan files (13M+ rows) slowed processing
+- Data Leakage Risks: - GA purchase-success events unintentionally leaked outcome labels
+                      - Some operational flags and timestamps represented future information.
+- Merging Multiple Operational Tables
+- Different date formats across sources
+- Heavy memory usage during merges
+- Very high Data imbalance
+
+These challenges improved my understanding of real-world data engineering constraints.
+
+ #### Key Take-aways
+ 
+This project strengthened my skills in:
+- Real-world machine learning
+- Handling data leakage in machine learning
+- Data engineering & cleaning
+- Handling very large datasets
+- Using predictive models in real time and using them to derive actionable insights
 
