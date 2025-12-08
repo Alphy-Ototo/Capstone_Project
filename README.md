@@ -72,6 +72,7 @@ Removed all columns containing future or outcome-dependent information, such as:
 - order_complete_flag
 - EVENT_PAGE_NAME containing “success.”
 - transaction_id, payment_success
+
 Also, filter out event rows corresponding to completed purchases.
 This ensures the model does not peek at information unavailable at prediction time.
 
@@ -97,11 +98,12 @@ We performed a threshold sweep to calculate:
 - Cost of outreach
 - Revenue gained
 - Net profit per 1,000 customers
+
 The optimal threshold identified maximizes net profit, not accuracy.
 This approach leads to more actionable insights for Swire’s operations team.
 
 #### Final Recommendations & Next Steps
-- Target customers above the optimal probability threshold for outreach, maximizing revenue recovery.  
+- Target customers above the optimal probability threshold for outreach through email, calls, or text,  maximizing revenue recovery.  
 - Focus on user-experience improvements on the most common drop-off points identified in GA events.    
 - Consider A/B testing different outreach strategies for customers at varying risk levels.  
 
