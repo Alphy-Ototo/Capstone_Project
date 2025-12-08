@@ -1,7 +1,7 @@
 ## Swire Coca-Cola Cart Abandonment Analysis
 ### MSBA Capstone 
 
-The goal of this project is to understand customer behavior on Swire Coca-Cola’s MyCoke360 ordering platform and develop a predictive model to identify which customers are most likely to abandon their carts, enabling targeted outreach to recover lost revenue from cart abandonment.
+The goal of this project is to understand customer behavior on Swire Coca-Cola’s MyCoke360 ordering platform and develop a predictive model to identify which customers are most likely to abandon their carts, enabling targeted outreach to recover lost revenue from cart abandonment. Although this was a group capstone project, the analyses,  EDA, and modeling contained in this repository represent my individual contribution, including data cleaning, visualization, leakage-handling, feature engineering, model development, and profit-based threshold optimization.
 
 #### Business Problem
 
@@ -65,10 +65,6 @@ The EDA focused on four key areas:
 - Model of choice was Logistic regression
 - A leakage-safe predictive modeling pipeline was developed
 
-Target Definition
-
-made_a_purchase = 1 if the customer completed a purchase in the given session window.
-
 #### Leakage Handling
 
 Removed all columns containing future or outcome-dependent information, such as:
@@ -107,9 +103,12 @@ The optimal threshold identified maximizes net profit, not accuracy.
 This approach leads to more actionable insights for Swire’s operations team.
 
 #### Final Recommendations & Next Steps
-- Target customers above the optimal probability threshold for outreach through email, calls, or text,  maximizing revenue recovery.  
-- Focus on user-experience improvements on the most common drop-off points identified in GA events.    
-- Consider A/B testing different outreach strategies for customers at varying risk levels. 
+- Target customers above the optimal probability threshold for outreach through email, calls, or text,  maximizing revenue recovery.   
+- Consider A/B testing different outreach strategies for customers at varying risk levels.
+  
+#### The Business Value of the Solution
+
+This solution provides direct business value by enabling Swire Coca-Cola to target customers with a high risk of cart abandonment (above the optimal probability threshold), then do targeted outreach, such as emails, calls, or text reminders, to complete their purchase. By focusing efforts on high-probability customers, the model maximizes revenue recovery while minimizing unnecessary outreach costs. This ensures a more efficient use of sales resources and delivers a measurable financial impact by converting abandoned carts into completed orders.
 
 #### Challenges Encountered 
 
